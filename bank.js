@@ -1,9 +1,14 @@
 class Bank {
-  deposit() {
+  constructor() {
+    this.accountBalances = new Map();
+  }
+
+  deposit(name, value) {
+    this.accountBalances.set(name, value);
   }
 
   getBalance(name) {
-    return 50;
+    return this.accountBalances.get(name);
   }
 }
 
