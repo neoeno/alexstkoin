@@ -4,7 +4,14 @@ class Bank {
   }
 
   deposit(name, value) {
-    this.accountBalances.set(name, value);
+    if(this.accountBalances.get(name) == undefined) {
+      this.accountBalances.set(name, value);
+    }
+    else {
+      let currentBalance = this.accountBalances.get(name);
+      let newBalance = currentBalance + value
+      this.accountBalances.set(name, newBalance)
+    }
   }
 
   getBalance(name) {
