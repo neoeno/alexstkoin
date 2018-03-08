@@ -14,6 +14,12 @@ class Bank {
     }
   }
 
+  withdraw(name, value) {
+    let currentBalance = this.accountBalances.get(name)
+    let newBalance = currentBalance - value
+    this.accountBalances.set(name, newBalance);
+  }
+
   getBalance(name) {
     return this.accountBalances.get(name);
   }
